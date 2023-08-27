@@ -1,0 +1,50 @@
+:root {
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(212, 45%, 89%);
+    font-family: "Outfit", sans-serif;
+}
+
+.card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.card__qrcode {
+    border-radius: 10px;
+}
+
+.card__title {
+    margin: 1.5rem 0 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: hsl(218, 44%, 22%);
+}
+
+.card__description {
+    margin: 0;
+    padding: 1rem;
+    font-weight: 400;
+    color: hsl(220, 15%, 55%);
+}
