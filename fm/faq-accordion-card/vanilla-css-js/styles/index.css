@@ -1,0 +1,192 @@
+:root {
+    box-sizing: border-box;
+
+    --color-gradient-soft-violet: hsl(273, 75%, 66%);
+    --color-gradient-soft-blue: hsl(240, 73%, 65%);
+    --color-card-bg: #fff;
+    --color-divider: hsl(240, 5%, 91%);
+    --color-text1: hsl(237, 12%, 33%);
+    --color-text2: hsl(240, 6%, 50%);
+    --color-hover: hsl(14, 88%, 65%);
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+section,
+p {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-gradient-soft-violet),
+        var(--color-gradient-soft-blue)
+    );
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+    width: 920px;
+    height: 509px;
+    border-radius: 1rem;
+    background-color: var(--color-card-bg);
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    box-shadow: 0 1rem 4rem -1rem rgb(0, 0, 0, 0.4);
+}
+
+.card__image {
+    flex-grow: 1;
+    background-color: var(--color-card-bg), var(--color-card-bg);
+    background-image: url("../images/illustration-woman-online-desktop.svg"),
+        url("../images/bg-pattern-desktop.svg");
+    background-position: -85px, -580px -300px;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.card__image::before {
+    content: "";
+    position: relative;
+    top: 210px;
+    left: -93px;
+    display: inline-block;
+    width: 191px;
+    height: 184px;
+    background: url("../images/illustration-box-desktop.svg") center / cover
+        no-repeat;
+}
+
+.card__accordion {
+    flex-basis: 50%;
+    padding: 4rem 6rem 0 1.25rem;
+    color: var(--color-text1);
+}
+
+.card__accordion__title {
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.card__accordion__item {
+    border-bottom: thin solid var(--color-divider);
+    font-size: 14px;
+}
+
+.card__accordion__item:focus-within {
+    outline: black solid 2px;
+}
+
+.card__accordion__item button {
+    width: 100%;
+    border: none;
+    padding: 1.1rem 0;
+    display: flex;
+    align-items: center;
+    font: 400 13.333px "Kumbh Sans", sans-serif;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.card__accordion__item button[aria-expanded="true"] {
+    font-weight: 700;
+}
+
+.card__accordion__item button[aria-expanded="false"]:hover {
+    color: var(--color-hover);
+}
+
+.card__accordion__item button::after {
+    content: "";
+    width: 10px;
+    height: 7px;
+    margin-left: auto;
+    margin-right: 0.9rem;
+    background: white url("../images/icon-arrow-down.svg") center / cover
+        no-repeat;
+}
+
+.card__accordion__item button[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.card__accordion__item > section {
+    margin-top: -0.5rem;
+    padding-bottom: 1rem;
+    padding-right: 1.75rem;
+    display: none;
+    line-height: 1.1rem;
+    color: var(--color-text2);
+    text-align: justify;
+}
+
+@supports (selector(:has(*))) {
+    h2:has(button[aria-expanded="true"]) ~ section {
+        display: block;
+        font-size: 12px;
+        padding-bottom: 1rem;
+    }
+}
+
+@supports not (selector(:has(*))) {
+    section[data-open="true"] {
+        display: block;
+        font-size: 12px;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 4rem 1.5rem 0;
+        height: 537px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .card__image {
+        flex-grow: 0;
+        height: 120px;
+        background-color: var(--color-card-bg);
+        background-image: url("../images/bg-pattern-mobile.svg");
+        background-position: center top;
+        border-radius: 1rem;
+    }
+
+    .card__image::before {
+        content: "";
+        display: inline-block;
+        background-image: url("../images/illustration-woman-online-mobile.svg");
+        left: calc(50% - 237px / 2);
+        top: -108px;
+        width: 237px;
+        height: 180px;
+    }
+
+    .card__accordion {
+        padding: 0.75rem 1.5rem 0;
+    }
+
+    .card__accordion__title {
+        text-align: center;
+        margin-bottom: 0.85rem;
+    }
+}

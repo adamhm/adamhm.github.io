@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/index.css" />
+        <title>Frontend Mentor | FAQ Accordion Card</title>
+    </head>
+    <body>
+        <main class="container">
+            <article class="card">
+                <div class="card__image"></div>
+                <div class="card__accordion">
+                    <h1 class="card__accordion__title">FAQ</h1>
+                    <div class="card__accordion__item">
+                        <h2>
+                            <button
+                                id="question1"
+                                aria-controls="answer1"
+                                aria-expanded="false"
+                            >
+                                How many team members can I invite?
+                            </button>
+                        </h2>
+                        <section
+                            id="answer1"
+                            aria-labelledby="question1"
+                            data-open="false"
+                        >
+                            <p>
+                                You can invite up to 2 additional users on the
+                                Free plan. There is no limit on team members for
+                                the Premium plan.
+                            </p>
+                        </section>
+                    </div>
+                    <div class="card__accordion__item">
+                        <h2>
+                            <button
+                                id="question2"
+                                aria-controls="answer2"
+                                aria-expanded="true"
+                            >
+                                What is the maximum file upload size?
+                            </button>
+                        </h2>
+                        <section
+                            id="answer2"
+                            data-open="true"
+                            aria-labelledby="question2"
+                        >
+                            <p>
+                                No more than 2GB. All files in your account must
+                                fit your allotted storage space.
+                            </p>
+                        </section>
+                    </div>
+                    <div class="card__accordion__item">
+                        <h2>
+                            <button
+                                id="question3"
+                                aria-controls="answer3"
+                                aria-expanded="false"
+                            >
+                                How do I reset my password?
+                            </button>
+                        </h2>
+                        <section
+                            id="answer3"
+                            aria-labelledby="question3"
+                            data-open="false"
+                        >
+                            <p>
+                                Click “Forgot password” from the login page or
+                                “Change password” from your profile page. A
+                                reset link will be emailed to you.
+                            </p>
+                        </section>
+                    </div>
+                    <div class="card__accordion__item">
+                        <h2>
+                            <button
+                                id="question4"
+                                aria-controls="answer4"
+                                aria-expanded="false"
+                            >
+                                Can I cancel my subscription?
+                            </button>
+                        </h2>
+                        <section
+                            id="answer4"
+                            aria-labelledby="question4"
+                            data-open="false"
+                        >
+                            <p>
+                                Yes! Send us a message and we’ll process your
+                                request no questions asked.
+                            </p>
+                        </section>
+                    </div>
+                    <div class="card__accordion__item">
+                        <h2>
+                            <button
+                                id="question5"
+                                aria-controls="answer5"
+                                aria-expanded="false"
+                            >
+                                Do you provide additional support?
+                            </button>
+                        </h2>
+                        <section
+                            id="answer5"
+                            aria-labelledby="question5"
+                            data-open="false"
+                        >
+                            <p>
+                                Chat and email support is available 24/7. Phone
+                                lines are open during normal business hours.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <script src="js/index.js"></script>
+    </body>
+</html>
