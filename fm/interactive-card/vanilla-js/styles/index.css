@@ -1,0 +1,270 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+:root {
+    --color-body: #f0f0f0;
+    --color-bg: hsl(0, 0%, 100%);
+    --color-card-front: hsl(0, 0%, 100%);
+    --color-card-back: hsl(0, 0%, 100%);
+    --color-label: hsl(278, 68%, 11%);
+    --color-input-border: hsl(270, 3%, 87%);
+    --color-input-placeholder: hsl(270, 3%, 87%);
+    --color-input-focus: hsl(278, 68%, 11%);
+    --color-error: hsl(0, 100%, 66%);
+    --color-button: hsl(278, 68%, 11%);
+    --color-button-text: hsl(270, 3%, 87%);
+    --color-completed-text-1: hsl(278, 68%, 11%);
+    --color-completed-text-2: hsl(279, 6%, 55%);
+    --image-main-desktop: url("../images/bg-main-desktop.png");
+    --image-card-front: url("../images/bg-card-front.png");
+    --image-card-back: url("../images/bg-card-back.png");
+    --image-card-logo: url("../images/card-logo.svg");
+    --image-main-mobile: url("../images/bg-main-mobile.png");
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-body);
+    height: 100vh;
+}
+
+form,
+label,
+input,
+button {
+    display: block;
+}
+
+.container {
+    width: 1440px;
+    height: 900px;
+}
+
+.card__details__completed button, .card__details__form > button {
+    border-radius: 8px;
+    background-color: var(--color-button);
+    width: 100%;
+    height: 53px;
+    color: var(--color-button-text);
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: var(--color-bg);
+    height: 100%;
+}
+.card__image {
+    position: relative;
+    flex: 1;
+    background: var(--image-main-desktop) no-repeat;
+}
+.card__image__front {
+    position: absolute;
+    top: 187px;
+    left: 164px;
+    background: var(--image-card-logo) no-repeat 30px 26px, var(--image-card-front) no-repeat;
+    padding: 140px 2rem 0;
+    width: 447px;
+    height: 245px;
+    color: var(--color-card-front);
+    text-transform: uppercase;
+}
+.card__image__front__number {
+    font-size: 1.75rem;
+    letter-spacing: 0.2rem;
+    min-height: 36px;
+}
+.card__image__front > div:nth-child(2) {
+    display: flex;
+    padding-top: 1.75rem;
+    font-size: 14px;
+    letter-spacing: 0.125rem;
+}
+.card__image__front__expiration {
+    margin-left: auto;
+}
+.card__image__back {
+    position: absolute;
+    top: 470px;
+    left: 256px;
+    background: var(--image-card-back) no-repeat;
+    width: 447px;
+    height: 245px;
+    color: var(--color-card-back);
+}
+.card__image__back__cvc {
+    position: relative;
+    top: 110px;
+    left: 357px;
+    max-width: 50px;
+    font-size: 0.875rem;
+}
+.card__details {
+    display: flex;
+    flex: 1;
+    padding-left: 224px;
+    font-size: 12px;
+}
+.card__details__form {
+    width: 381px;
+    margin-top: 275px;
+}
+.card__details__form label {
+    margin-top: 1.65rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--color-label);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.card__details__form > label:first-child {
+    margin-top: 0;
+}
+.card__details__form input {
+    border: 1px solid var(--color-input-border);
+    border-radius: 8px;
+    padding: 0 1rem;
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+}
+.card__details__form input:focus-visible {
+    outline-color: var(--color-input-focus);
+}
+.card__details__form input::placeholder {
+    color: var(--color-input-placeholder);
+}
+.card__details__form input[aria-invalid=true] {
+    border-color: var(--color-error);
+}
+.card__details__form input[aria-invalid=true] + span.error {
+    display: block;
+}
+.card__details__form .error {
+    display: none;
+    color: var(--color-error);
+    margin-top: 0.6rem;
+}
+.card__details__form > div {
+    display: flex;
+    column-gap: 20px;
+}
+.card__details__form__exp > div {
+    display: flex;
+    column-gap: 10px;
+}
+.card__details__form__exp > div > input {
+    display: inline-block;
+    width: 80px;
+}
+.card__details__form div:has(input[aria-invalid=true]) + span.error {
+    display: block;
+}
+.card__details__form > button {
+    margin-top: 2.5rem;
+}
+.card__details__completed {
+    display: none;
+    width: 381px;
+    margin-top: 300px;
+    text-align: center;
+}
+.card__details__completed p:first-of-type {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-completed-text-1);
+}
+.card__details__completed p:last-of-type {
+    font-size: 18px;
+    color: var(--color-completed-text-2);
+}
+.card__details__completed button {
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 375px;
+        height: 704px;
+    }
+    .card {
+        flex-direction: column;
+    }
+    .card__image {
+        flex: 0 0 240px;
+        background-image: var(--image-main-mobile);
+    }
+    .card__image__front {
+        background: var(--image-card-logo) no-repeat 18px 16px/55px, var(--image-card-front) top left/286px 157px no-repeat;
+        top: 121px;
+        left: 16px;
+        width: 286px;
+        height: 157px;
+        z-index: 1;
+        padding: 85px 18px 0;
+    }
+    .card__image__front__number {
+        font-size: 1.05rem;
+    }
+    .card__image__front > div:nth-child(2) {
+        padding-top: 5px;
+        font-size: 10px;
+        letter-spacing: 0.05rem;
+    }
+    .card__image__back {
+        background-size: 286px 157px;
+        top: 32px;
+        left: 73px;
+        width: 286px;
+        height: 157px;
+    }
+    .card__image__back__cvc {
+        top: 70px;
+        left: 225px;
+        font-size: 10px;
+    }
+    .card__details {
+        padding: 0 1.5rem;
+    }
+    .card__details__form {
+        margin-top: 90px;
+    }
+    .card__details__form .error {
+        margin-top: 0.1rem;
+    }
+    .card__details__form > button {
+        font-size: 1rem;
+        margin-top: 1.25rem;
+    }
+    .card__details__completed {
+        margin-top: 90px;
+    }
+}
